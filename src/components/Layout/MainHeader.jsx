@@ -3,7 +3,7 @@ import classes from "./MainHeader.module.css";
 
 const MainHeader = () => {
   return (
-    <header>
+    <header className={classes.header}>
       <h1>Redux Cart</h1>
       <nav>
         <ul>
