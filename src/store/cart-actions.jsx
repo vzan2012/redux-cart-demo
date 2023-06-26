@@ -50,7 +50,10 @@ export const sendCartData = (cart) => {
     const sendRequest = async () => {
       const response = await fetch(`${PRODUCTS_URL}/cart.json`, {
         method: "PUT",
-        body: JSON.stringify(cart),
+        body: JSON.stringify({
+          items: cart.items,
+          totalQuantity: cart.totalQuantity,
+        }),
       });
 
       if (!response.ok) {

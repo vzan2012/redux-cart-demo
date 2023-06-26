@@ -21,15 +21,12 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // const sendCartData = async () => {};
-    // // const responseData = await response.json();
     if (isInitial) {
       isInitial = false;
       return;
     }
 
-    dispatch(sendCartData(cart));
-    // sendCartData().catch((error) => { });
+    if (cart.changed) dispatch(sendCartData(cart));
   }, [cart, dispatch]);
   return (
     <>
